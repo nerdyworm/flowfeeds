@@ -3,11 +3,8 @@
 Flowfeeds.VideoController = Flowfeeds.PlayableController.extend({
   isVideo: true,
 
-  play: function() {
-    this.get('controllers.player').play(this);
-  },
-
-  setup: function() {
+  setup: function(video) {
+    this.set('content', video);
     this.video = new YT.Player('video-player', this.createVideoOptions());
     this.trackWatch();
   },

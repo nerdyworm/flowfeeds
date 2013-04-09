@@ -8,7 +8,7 @@ Flowfeeds.PlayableController = Ember.ObjectController.extend({
 
   isCurrent: function() {
     return this.get('controllers.player.id') === this.get('id');
-  }.property('controllers.player.content'),
+  }.property('controllers.player.id'),
 
   addToPlaylist: function(playlist) {
     playlist.addItem(this.get('content'));

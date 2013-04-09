@@ -9,13 +9,26 @@ Flowfeeds.Playlist = Ember.Object.extend({
   },
 
   loadItems: function() {
-    this.set('items', null);
+    //this.set('items', null);
     Ember.$.ajax({
       url: "playlists/%@/playlist_items".fmt(this.get('id')),
       context: this,
       success: function(json) {
         var items = Flowfeeds.store.loadMany(Flowfeeds.PlaylistItem, json.playlist_items);
-        this.set('items', items);
+
+        var existing = this.get('items');
+
+        items.forEach(function(item) {
+          var found = existing.find(function(e) {
+            return e.get('id') === item.get('id');
+          });
+
+          if(!found) {
+            existing.pushObject(item);
+          }
+        });
+
+        //this.set('items', items);
       }
     });
   },

@@ -1,5 +1,18 @@
 Flowfeeds.ApplicationRoute = Ember.Route.extend({
   events: {
+    play: function(playable, controller) {
+      this.skipable = controller.get('target');
+      this.controllerFor('player').play(playable);
+    },
+
+    previous: function() {
+      this.skipable.send('previous');
+    },
+
+    next: function() {
+      this.skipable.send('next');
+    },
+
     createPlaylist: function() {
       var name = prompt("What would you like to name your new playlists?");
       if(!Ember.isEmpty(name)) {

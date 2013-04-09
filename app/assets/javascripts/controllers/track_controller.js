@@ -1,11 +1,9 @@
 //require= controllers/playable_controller
 
 Flowfeeds.TrackController =  Flowfeeds.PlayableController.extend({
-  play: function() {
-    this.get('controllers.player').play(this);
-  },
 
-  setup: function() {
+  setup: function(track) {
+    this.set('content', track);
     this.stop();
     this.sound = this.createSound();
     this.sound.play();

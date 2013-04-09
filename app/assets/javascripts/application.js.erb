@@ -19,3 +19,7 @@
 Flowfeeds = Ember.Application.create();
 Flowfeeds.LOGO = "<%= image_path('logo.png') %>";
 Flowfeeds.LOADER = "<%= image_path('ajax-loader.gif') %>";
+
+Flowfeeds.type = function(object) {
+  return object.constructor.toString().split(".")[1].toLowerCase();
+}
