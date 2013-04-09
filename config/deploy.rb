@@ -8,12 +8,12 @@ set :deploy_to,   "/home/#{user}/"
 set :deploy_via,  :remote_cache
 set :use_sudo,    false
 
+set :default_shell, '/bin/bash -l'
+set :ssh_options, { forward_agent: true }
+
 set :scm, "git"
 set :repository, "git@github.com:nerdyworm/flowfeeds.git"
 set :branch, "master"
-
-default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
 
 set :bundle_cmd, "/home/#{user}/.rbenv/shims/bundle"
 set :bundle_flags, "--quiet"
