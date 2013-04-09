@@ -1,6 +1,6 @@
 require 'bundler/capistrano'
 
-server 'trance-mixes.com', :web, :app, :db, primary: true
+server 'flowfeeds.com', :web, :app, :db, primary: true
 
 set :application, "flowfeeds"
 set :user,        "flowfeeds"
@@ -8,19 +8,15 @@ set :deploy_to,   "/home/#{user}/"
 set :deploy_via,  :remote_cache
 set :use_sudo,    false
 
-#set :scm, "git"
-#set :repository,  ""
-
-set :deploy_via, :copy
-set :repository, "file:///Users/benjamin/code/flowfeeds.com/flowfeeds"
+set :scm, "git"
+set :repository, "git@github.com:nerdyworm/flowfeeds.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 set :bundle_cmd, "/home/#{user}/.rbenv/shims/bundle"
-#set :bundle_flags, "--deployment --quiet --binstubs"
-set :bundle_flags, ""
+set :bundle_flags, "--quiet"
 
 after "deploy", "deploy:cleanup"
 namespace :deploy do
