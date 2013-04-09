@@ -1,6 +1,11 @@
+# Flowfeeds
+
+A hours upon hours of free electronic music just for you!
+
+## WIP
 - Mark all played
 
-## Client Bugs
+## Known Bugs
 - When you sort a playlist, if the current track is sorted then the
   controller is destroyed and the player gets a sad :(
 
