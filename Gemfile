@@ -48,4 +48,4 @@ gem 'unicorn'
 gem 'whenever', require: false
 
 # Simple Database Backups
-gem 'aws-s3'
+gem 'aws-s3', require: false
