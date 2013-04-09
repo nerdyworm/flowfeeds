@@ -9,7 +9,6 @@ Flowfeeds.Playlist = Ember.Object.extend({
   },
 
   loadItems: function() {
-    //this.set('items', null);
     Ember.$.ajax({
       url: "playlists/%@/playlist_items".fmt(this.get('id')),
       context: this,
@@ -17,18 +16,13 @@ Flowfeeds.Playlist = Ember.Object.extend({
         var items = Flowfeeds.store.loadMany(Flowfeeds.PlaylistItem, json.playlist_items);
 
         var existing = this.get('items');
-
         items.forEach(function(item) {
           var found = existing.find(function(e) {
             return e.get('id') === item.get('id');
           });
 
-          if(!found) {
-            existing.pushObject(item);
-          }
+          if(!found) existing.pushObject(item);
         });
-
-        //this.set('items', items);
       }
     });
   },
@@ -47,7 +41,12 @@ Flowfeeds.Playlist = Ember.Object.extend({
     Ember.$.ajax({
       url: "playlists/%@/add".fmt(this.get('id')),
       data: data,
-      type: "POST"
+      type: "POST",
+      context: this,
+      success: function(json) {
+        var item = Flowfeeds.store.load(Flowfeeds.PlaylistItem, json.playlist_item);
+        this.get('items').pushObject(item);
+      }
     });
   },
 
