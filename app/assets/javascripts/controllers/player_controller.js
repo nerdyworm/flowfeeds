@@ -2,10 +2,7 @@ Flowfeeds.PlayerController = Ember.ObjectController.extend({
   needs: ['track', 'video'],
 
   play: function(playable) {
-    if(this.get('content') === playable) {
-      return;
-    }
-
+    if(this.get('content') === playable) return;
     if(this.get('content')) this.send('stop');
 
     var controller = this.controllerFor(playable);
