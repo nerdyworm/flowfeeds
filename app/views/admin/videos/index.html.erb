@@ -1,0 +1,26 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "Create video", new_admin_video_path, class: 'btn' %>
+  </div>
+  <h1>Videos</h1>
+</div>
+
+<table class="table">
+  <tbody>
+  <% @videos.each do |video| %>
+    <tr>
+      <td><%= video.id %></td>
+      <td><%= image_tag video.thumb, style: "height: 90px; width: 120px" %></td>
+      <td><%= link_to video.title, admin_video_path(video) %></td>
+      <td><%= video.youtube_id %></td>
+      <td>
+        <% if video.artist.present? %>
+          <%= link_to video.artist.name, admin_artist_path(video.artist) %>
+        <% end %>
+      </td>
+      <td><%= link_to "edit", edit_admin_video_path(video) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,28 @@
+{{#view Flowfeeds.InfiniteScrollView}}
+  <div class="page-header">
+    <!--
+    <div class="page-actions">
+      <button {{action markPlayed}} class="btn">mark all played</button>
+    </div>
+    -->
+    <h1>{{ title }}</h1>
+  </div>
+
+  <div class="feed">
+    <img {{ bindAttr src="image_medium" }} class="image">
+
+    <div class="meta">
+      <p class="website">
+        <a {{ bindAttr href="website" }} target="_blank">{{ website }}</a>
+      </p>
+      <p>
+        <a {{ bindAttr href="url" }} target="_blank">{{ url }}</a>
+      </p>
+      <div class="description">
+        {{ description }}
+      </div>
+    </div>
+  </div>
+
+  {{ render 'playables' tracks }}
+{{/view}}

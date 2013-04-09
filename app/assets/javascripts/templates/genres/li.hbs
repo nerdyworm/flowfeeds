@@ -1,0 +1,22 @@
+<li>
+  <span class="unplayed">{{ genre.unplayed }}</span>
+
+  <a href="#" {{action toggle}} {{bindAttr class=":toggle isExpanded:expanded:collapsed"}}>
+    <b class=caret></b>
+  </a>
+
+  {{#linkTo 'genre' genre class="link"}}
+    {{ genre.name }}
+  {{/linkTo}}
+
+  {{#if isExpanded}}
+  <ul class="submenu">
+    {{#each feed in genre.feeds}}
+    <li>
+      <span class="unplayed">{{ feed.unplayed }}</span>
+      {{#linkTo feed feed class="link"}}{{ feed.title }}{{/linkTo}}
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</li>

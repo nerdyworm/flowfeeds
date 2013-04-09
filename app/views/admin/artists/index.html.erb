@@ -1,0 +1,19 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "Create artist", new_admin_artist_path, class: 'btn' %>
+  </div>
+  <h1>Artists</h1>
+</div>
+
+<table class="table">
+  <tbody>
+  <% @artists.each do |artist| %>
+    <tr>
+      <td><%= artist.id %></td>
+      <td><%= link_to artist.name, admin_artist_path(artist) %></td>
+      <td><%= link_to "edit", edit_admin_artist_path(artist) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flowfeeds</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= yield %>
+  <%= javascript_tag do %>
+    <% if current_user %>
+      window.current_user = <%= UserSerializer.new(current_user, root: false).to_json.html_safe %>;
+      window.unplayed_video_count = <%= Video.unplayed_count(current_user).to_json.html_safe %>;
+      window.genres = <%= Genre.user_unplayed(current_user).to_json.html_safe %>;
+      window.playlists = <%= current_user.playlists.to_json(only: [:id, :name]).html_safe %>;
+    <% else %>
+      window.genres = <%= Genre.all.to_json.html_safe %>;
+    <% end %>
+  <% end %>
+  <%= javascript_include_tag "application" %>
+</body>
+</html>

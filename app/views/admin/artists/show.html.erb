@@ -1,0 +1,35 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "Edit", edit_admin_artist_path(@artist), class: 'btn' %>
+    <%= link_to "Destroy", admin_artist_path(@artist), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger' %>
+  </div>
+  <h1><%= @artist.name %></h1>
+</div>
+
+<% if @artist.feeds.any? %>
+  <h2>Feeds</h2>
+  <table class="table">
+    <tbody>
+    <% @artist.feeds.each do |feed| %>
+      <tr>
+        <td><%= link_to feed.title, admin_feed_path(feed) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end%>
+
+<% if @artist.videos.any? %>
+  <h2>Videos</h2>
+  <table class="table">
+    <tbody>
+    <% @artist.videos.each do |video| %>
+      <tr>
+        <td><%= image_tag video.thumb, style: "height: 90px; width: 120px" %></td>
+        <td><%= link_to video.title, admin_video_path(video) %></td>
+        <td><%= link_to "edit", edit_admin_video_path(video) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

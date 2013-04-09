@@ -1,0 +1,9 @@
+<div class="page-header">
+  <h1>Ben's Picks</h1>
+</div>
+
+{{ render 'playables' tracks }}
+
+{{#if hasMoreTracks}}
+  <button {{action more}} class="btn">more</button>
+{{/if}}

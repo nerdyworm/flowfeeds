@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>Register for a super awesome account</h1>
+</div>
+<p> What you get for registering </p>
+<ul>
+  <li><strong>I will never spam you</strong></li>
+  <li>Keep track of what you played</li>
+  <li>Create playlists</li>
+  <li>A warm fuzzy feeling &hearts;</li>
+</ul>
+
+<form {{action submit on="submit"}}>
+  <div {{ bindAttr class=":field errors.email:error" }}>
+    <label for="email">Email</label>
+    {{ view Ember.TextField valueBinding="email" placeholder="your-email@example.com"}}
+    {{#each errors.email}}
+    <span class="message">{{this}}</span>
+    {{/each}}
+  </div>
+
+  <div {{ bindAttr class=":field errors.password:error" }}>
+    <label for="email">Password</label>
+    {{ view Ember.TextField valueBinding="password" type="password" placeholder="your super awesome password"}}
+    {{#each errors.password}}
+    <span class="message">{{this}}</span>
+    {{/each}}
+  </div>
+
+  <div class="actions">
+    <button type="submit">Register</button>
+  </div>
+</form>

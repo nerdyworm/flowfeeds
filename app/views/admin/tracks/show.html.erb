@@ -1,0 +1,16 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "Edit", edit_admin_track_path(@track), class: 'btn' %>
+    <%= link_to "Destroy", admin_track_path(@track), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger' %>
+  </div>
+  <h1><%= @track.title %></h1>
+</div>
+
+<div class="row">
+  <div class="span4">
+    Feed: <%= link_to @track.feed.title, admin_feed_path(@track.feed) %>
+  </div>
+  <div class="span8">
+
+  </div>
+</div>

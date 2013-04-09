@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flowfeeds</title>
+  <%= stylesheet_link_tag "admin", media: "all" %>
+  <%= javascript_include_tag "admin" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container" style="padding-top: 20px">
+
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Flowfeeds Admin</a>
+      <ul class="nav">
+        <li><%= link_to "Artists", admin_artists_path %></li>
+        <li><%= link_to "Feeds", admin_feeds_path %></li>
+        <li><%= link_to "Videos", admin_videos_path %></li>
+        <li><%= link_to "Resque", admin_resque_server_path %></li>
+      </ul>
+      <ul class="nav pull-right">
+        <li><%= link_to "Sign out", destroy_admin_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </div>
+
+  <%= yield %>
+
+</div>
+</body>
+</html>

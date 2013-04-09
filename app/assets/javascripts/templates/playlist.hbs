@@ -1,0 +1,11 @@
+<div class="page-header">
+  <div class="page-actions">
+    <button {{action deletePlaylist this}}>Delete</button>
+  </div>
+
+  <h1>{{ name }}</h1>
+</div>
+
+{{#view Flowfeeds.SortablePlaylistView playlistBinding="content"}}
+  {{ render 'playlistItems' items }}
+{{/view}}

@@ -1,0 +1,33 @@
+<div class="thumb-container">
+  <img {{ bindAttr src="thumb" }} class="thumb">
+</div>
+
+<div class="playable">
+  {{#if content}}
+  <span class="title">{{ title }}</span> <span class="artist">{{ artist.name }}</span>
+  {{else}}
+  <span class="artist">Made by <a href="mailto: ben@nerdyworm.com">ben</a> with love :-)</span>
+  {{/if}}
+</div>
+
+<div class="player-controls">
+  <button {{action previous}} class="previous"></button>
+  {{#if isPlaying}}
+    <button {{action pause}} class="pause"></button>
+  {{else}}
+    <button {{action resume}} class="play"></button>
+  {{/if}}
+  <button {{action next}} class="next"></button>
+</div>
+
+<div class="current-time">
+  {{ formatTime position }}
+</div>
+
+<div class="progress-container">
+  {{ render 'progress' controller }}
+</div>
+
+<div class="total-time">
+  {{ formatTime duration }}
+</div>

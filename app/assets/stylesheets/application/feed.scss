@@ -1,0 +1,16 @@
+@import 'clearfix';
+
+.feed {
+  @extend .clearfix;
+  padding-bottom: 20px;
+  border-bottom: 1px #f2f2f2 solid;
+
+  .image {
+    float: left;
+    height: 150px;
+  }
+
+  .meta {
+    margin-left: 160px;
+  }
+}

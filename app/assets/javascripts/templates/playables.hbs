@@ -1,0 +1,19 @@
+<div class="playables">
+  {{#each controller}}
+  <div {{bindAttr class="isCurrent played :playable" data-id="id"}}>
+    <div class="menu">{{ template 'playable_menu' }}</div>
+    <div class="published-at">{{ unbound formatDateTime published }}</div>
+    <div class="thumb">
+      <img {{ bindAttr src="thumb" }} {{action play on="click"}}>
+    </div>
+    <div class="u">
+      <div class="title">
+        <a href="#" {{action play}}>{{ unbound title }}</a>
+      </div>
+      <div class="artist">
+        {{ unbound artist.name }}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

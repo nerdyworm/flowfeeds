@@ -1,0 +1,38 @@
+<%= form_for([:admin, @track], html: { class: "form-horizontal" }) do |f| %>
+  <% if @track.errors.any? %>
+    <div class="alert alert-error">
+      <ul class="unstyled">
+      <% @track.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :title, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, class: 'input-xxlarge'  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.label :hidden, class: 'checkbox' do %>
+        <%= f.check_box :hidden %> Hidden
+      <% end %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.label :promoted, class: 'checkbox' do %>
+        <%= f.check_box :promoted %> Promoted
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

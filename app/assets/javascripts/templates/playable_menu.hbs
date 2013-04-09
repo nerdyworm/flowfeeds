@@ -1,0 +1,16 @@
+{{#if isPlaylistItem}}
+  <a href="#" {{action removeFromPlaylist this}}>&times;</a>
+{{else}}
+  {{#if Flowfeeds.user}}
+  <span class="dropdown">
+    <a data-toggle=dropdown class="dropdown-toggle">
+      &plus; <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      {{#each playlist in controllers.playlists}}
+      <li><a href="#" {{action addToPlaylist playlist}}>{{ playlist.name }}</a></li>
+      {{/each}}
+    </ul>
+  </span>
+  {{/if}}
+{{/if}}

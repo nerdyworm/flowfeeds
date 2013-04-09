@@ -1,0 +1,64 @@
+<%= form_for([:admin, @feed], html: { class: "form-horizontal" }) do |f| %>
+  <% if @feed.errors.any? %>
+    <div class="alert alert-error">
+      <ul class="unstyled">
+      <% @feed.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :title, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, class: 'input-xxlarge'  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :url, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :url, class: 'input-xxlarge'  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :image, class: 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :image %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :genre_id, class: 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :genre_id, Genre.all, :id, :name  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :artist, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :artist_name, class: 'input-xxlarge', data: { autocomplete_source: autocomplete_admin_artists_path }  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :website, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :website, class: 'input-xxlarge'  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :description, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, class: 'input-xxlarge' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

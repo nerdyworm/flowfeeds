@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h1>Login to your super awesome account</h1>
+</div>
+
+{{#if message}}
+  <div class="flash">{{ message }}</div>
+{{/if}}
+
+<form {{ action submit on="submit" }}>
+  <div class="field">
+    <label for="email">Email</label>
+    {{ view Ember.TextField valueBinding="email" elementId="email"}}
+  </div>
+
+  <div class="field">
+    <label for="password">Password</label>
+    {{ view Ember.TextField valueBinding="password" type="password" elementId="password"}}
+  </div>
+
+  <div class="actions">
+    <button type="submit">Register</button>
+  </div>
+</form>

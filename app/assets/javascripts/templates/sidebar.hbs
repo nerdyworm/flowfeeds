@@ -1,0 +1,24 @@
+<div id="sidebar" {{ bindAttr class="isVideoVisible" }}>
+  <ul>
+    <li class="title">Browse</li>
+    <li>{{#linkTo "index"}}Latest{{/linkTo}}</li>
+    <li>
+      <span class="unplayed">{{ Flowfeeds.VIDEO_META.unplayed }}</span>
+      {{#linkTo "videos"}}Videos{{/linkTo}}
+    </li>
+    <li class="title">Genres</li>
+    {{#each genre in genres}}
+      {{ render 'genres/li' genre }}
+    {{/each}}
+    <li class="title">Playlists</li>
+    {{#if Flowfeeds.user}}
+      {{#each playlist in controllers.playlists}}
+      <li>{{#linkTo "playlist" playlist}}{{ playlist.name }}{{/linkTo}}</li>
+      {{/each}}
+      <li><a {{action createPlaylist}} href="#">Create Playlist</a></li>
+    {{else}}
+      <li>{{#linkTo register}}Register to create playlists{{/linkTo}}</li>
+    {{/if}}
+  </ul>
+</div>
+<div id=video-player></div>

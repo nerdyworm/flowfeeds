@@ -1,0 +1,133 @@
+@import 'colors';
+
+#player .progress {
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(0,0,0,0.05);
+
+  width: 100%;
+  height: 12px;
+
+  .bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+
+  .bar.loading {
+    z-index: 0;
+    background: rgba(0,0,0,.05);
+  }
+
+  .bar.position {
+    background: $orange;
+  }
+}
+
+#player {
+  height: 50px;
+  padding: 20px;
+
+  .thumb-container {
+    float: left;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .playable {
+    height: 18px;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  .artist {
+    color: $muted;
+  }
+
+  .player-controls {
+    float: left;
+    height: 32px;
+  }
+
+  button {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    -webkit-appearance: button;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .previous, .next {
+    display: block;
+    height: 32px;
+    width: 24px;
+    float: left;
+    background-position: 50% 50%;
+  }
+
+  .previous {
+    background-image: url(<%= image_path("prev.png") %>);
+  }
+
+  .next {
+    background-image: url(<%= image_path("next.png") %>);
+  }
+
+  .play, .pause {
+    display: block;
+    height: 32px;
+    width: 32px;
+    float: left;
+    background-position: 50% 50%;
+    margin: 0px 13px;
+  }
+
+  .play {
+    background-image: url(<%= image_path("play.png") %>);
+  }
+
+  .pause {
+    background-image: url(<%= image_path("pause.png") %>);
+  }
+
+  .current-time{
+    float: left;
+    line-height: 32px;
+    width: 50px;
+    text-align: center;
+  }
+
+  .total-time {
+    float: right;
+    margin-right: 10px;
+    line-height: 32px;
+    width: 50px;
+    text-align: center;
+  }
+
+  .progress-container {
+    height: 12px;
+    margin: 10px 5px;
+
+    position: absolute;
+    left: 230px;
+    right: 75px;
+  }
+}
+

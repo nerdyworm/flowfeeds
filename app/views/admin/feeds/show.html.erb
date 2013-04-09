@@ -1,0 +1,36 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "Update", enqueue_updater_admin_feed_path(@feed), remote: true, method: :post, class: 'btn' %>
+    <%= link_to "Edit", edit_admin_feed_path(@feed), class: 'btn' %>
+    <%= link_to "Destroy", admin_feed_path(@feed), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger' %>
+  </div>
+  <h1><%= @feed.title %></h1>
+</div>
+
+
+<div class="row">
+  <div class="span4">
+    <%= image_tag @feed.image %>
+  </div>
+  <div class="span8">
+    <%= simple_format @feed.description %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tbody>
+      <% @feed.playables.each do |track| %>
+      <tr>
+        <td><%= track.id %></td>
+        <td><%= link_to track.title, admin_track_path(track) %></td>
+        <td><%= track.hidden %></td>
+        <td><%= track.promoted %></td>
+        <td><%= link_to 'edit', edit_admin_track_path(track) %></td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

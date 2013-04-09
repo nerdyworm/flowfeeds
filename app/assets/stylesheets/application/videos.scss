@@ -1,0 +1,20 @@
+.videos .video {
+  height: 90px;
+  margin-bottom: 20px;
+  display: block;
+
+  .thumb {
+    float: left;
+    width: 120px;
+    height: 90px;
+  }
+
+  .u {
+    margin-left: 130px;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+}
+

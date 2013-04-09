@@ -1,0 +1,26 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "Create feed", new_admin_feed_path, class: 'btn' %>
+  </div>
+  <h1>Feeds</h1>
+</div>
+
+<table class="table">
+  <tbody>
+  <% @feeds.each do |feed| %>
+    <tr>
+      <td><%= feed.id %></td>
+      <td><%= image_tag feed.image.thumb, style: "height: 36px; width: 36px" %></td>
+      <td><%= link_to feed.title, admin_feed_path(feed) %></td>
+      <td>
+        <% if feed.artist.present? %>
+          <%= link_to feed.artist.name, admin_artist_path(feed.artist) %>
+        <% end %>
+      </td>
+      <td><%= link_to "edit", edit_admin_feed_path(feed) %></td>
+      <td><%= link_to "update", enqueue_updater_admin_feed_path(feed), remote: true, method: :post %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

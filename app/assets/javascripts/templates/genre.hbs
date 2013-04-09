@@ -1,0 +1,12 @@
+{{#view Flowfeeds.InfiniteScrollView}}
+  <div class="page-header">
+    <!--
+    <div class="page-actions">
+      <button {{action markPlayed}} class="btn">mark all played</button>
+    </div>
+    -->
+    <h1>{{ name }}</h1>
+  </div>
+
+  {{ render 'playables' tracks }}
+{{/view}}

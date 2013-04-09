@@ -1,0 +1,2 @@
+class Track < Playable
+end

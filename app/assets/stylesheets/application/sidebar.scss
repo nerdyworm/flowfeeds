@@ -1,0 +1,64 @@
+@import 'colors';
+
+#sidebar {
+  ul li {
+    white-space: nowrap;
+  }
+
+  ul {
+    padding-left: 10px;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    padding: 1px 0px;
+  }
+
+  a.link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  a.toggle {
+    display: inline-block;
+    float: left;
+  }
+
+  .toggle.collapsed .caret {
+    margin-top: 4px;
+    margin-left: 0px;
+  }
+
+  .toggle.expanded .caret {
+    margin-top: 6px;
+    margin-left: -2px;
+    margin-right: 2px;
+  }
+
+  .title {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $muted;
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+
+  .unplayed {
+    float: right;
+    margin: 0px 5px;
+    color: #9c9c9c;
+  }
+
+  .active {
+    font-weight: bold;
+    color: $orange;
+  }
+
+  .toggle a {
+    display: inline-block;
+  }
+
+  .submenu li a {
+  }
+}

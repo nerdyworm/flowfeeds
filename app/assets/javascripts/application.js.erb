@@ -1,0 +1,21 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui
+//= require soundmanager2
+//= require bootstrap-dropdown
+//= require handlebars
+//= require ember-head
+//= require_self
+//= require_tree ./mixins
+//= require_tree ./models
+//= require_tree ./controllers
+//= require_tree ./views
+//= require_tree ./helpers
+//= require_tree ./templates
+//= require_tree ./routes
+//= require_tree ./initializers
+//= require ./router
+//= require ./store
+Flowfeeds = Ember.Application.create();
+Flowfeeds.LOGO = "<%= image_path('logo.png') %>";
+Flowfeeds.LOADER = "<%= image_path('ajax-loader.gif') %>";

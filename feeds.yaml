@@ -1,0 +1,71 @@
+---
+- :name: Drum & Bass
+  :feed_urls:
+  - http://feed.pfradio.com/pfr
+  - http://feeds.feedburner.com/DnbRadioArchive
+  - http://www.liquiddnb.com/podcast.xml
+  - http://pietheyb.home.xs4all.nl/podcast/podcast.xml
+  - http://podcast.breakbeat.co.uk/ 
+  - http://feeds.feedburner.com/SubSwaraPodcast
+
+- :name: Trance
+  :feed_urls:
+  - http://feeds.feedburner.com/lostworldshow
+  - http://sharamtayebi.podbean.com/feed/
+  - http://www.tatw.co.uk/podcast.xml
+  - http://simonpatterson.podOmatic.com/rss2.xml
+  - http://feeds.feedburner.com/mumblestrance
+  - http://djrow.podomatic.com/rss2.xml
+  - http://foamboxmarketing.com/sot/podcast.xml
+  - http://feeds.feedburner.com/AssortedtrancecomMixes
+  - http://podcasts.2-dutch.com/marcelwoods/podcast.php
+  - http://cliffyburrows.podomatic.com/rss2.xml
+  - http://podcast.electronic-mixes.com/electronic-mixes.podcast.xml
+  - http://feeds.feedburner.com/trancemixdotorg
+  - http://peakrecords.podomatic.com/rss2.xml
+  - http://maximumprogression.podomatic.com/rss2.xml
+  - http://feeds.feedburner.com/ds-podcast
+  - http://www.galexmusic.com/podcast/gareth.xml
+  - http://heavens-trance.com/feed/podcast
+  - http://www.bjornakesson.com/thresholdpodcast.xml
+  - http://feeds.feedburner.com/radiokulpodcast
+  - http://boomfestival.org/boom2012/?feed=podcast
+  - http://feeds.feedburner.com/AndyMoorMoormusic
+  - http://musicforprogramming.net/rss.php
+  - http://feeds.feedburner.com/ChicagoTranceformation
+  - http://djcoleman.net/feed/
+  - http://djaramis.podOmatic.com/rss2.xml
+  - http://www.steveandersonmusic.com/podcasts/steveandersonpodcast.xml
+  - http://www.marksherry.net/outburst_radio/outburst_radioshow_podcast.xml
+  - http://friskyradio.com/podcast/index.xml
+  - http://danascherl022.podomatic.com/rss2.xml
+  - http://www.axelkarakasis.com/remain/podcast.xml
+  - http://mikeonswell.djpod.fr/podcast.xml
+  - http://www.john00fleming.co.uk/mixes/podcasts/Nov08/podcast.xml
+  - http://www.lange-music.com/ICpodcast/intercity.xml
+  - http://www.bia2.com/masoud/podcast.xml
+  - http://www.nocturnalradio.org/podcast/nocturnal.xml
+  - http://www.tritonalmusic.com/podcast.xml
+  - http://usatrancemovement.com/home/category/media/ustm-radio/feed/
+  - http://feeds.feedburner.com/SupertabRadioPodcast
+  - http://www.djinsomniacmusic.com/podcasts/podcast.xml
+  - http://www.rushhourradio.net/christopherlawrence_rushhour/Podcast/rss.xml
+  - http://podcast.manuellesaux.com/feed.xml
+  - http://djadamk.com/radio/akhb.xml
+  - http://www.mondorecords.com/podcast/mondosessions_podcast_rss.xml
+  - http://www.sandervandoorn.com/SVD%20Podcast/podcasts/SvDIDENTITYPODCAST-itunesnew.xml
+  - http://www.tytaniumsessions.com/podcast/podcast.xml
+  - http://deepspacerecords.podomatic.com/rss2.xml
+  - http://podcast.tranceinfrance.com/1-Trance%20in%20France%20Show/podcast.xml
+- :name: Techno
+  :feed_urls:
+  - http://feeds.feedburner.com/BeatAndOrder-TechnoPodcastByVincentMaher
+- :name: Progressive
+  :feed_urls:
+  - http://feeds.feedburner.com/TheBidness
+- :name: House
+  :feed_urls:
+  - http://feeds.feedburner.com/PhilDahouseCat
+  - http://housemusicpodcasts.co.uk/feed/
+  - http://www.dogglounge.com/feed/podcast
+

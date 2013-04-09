@@ -1,0 +1,80 @@
+@import 'colors';
+@import 'clearfix';
+
+.playables {
+  .playable {
+    @extend .clearfix;
+    line-height: 36px;
+    padding: 5px;
+    padding-right: 20px;
+    border-bottom: 1px #f2f2f2 solid;
+  }
+
+  .thumb {
+    float: left;
+    width: 36px;
+    height: 36px;
+    img {
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+
+  .u {
+    line-height: 18px;
+    margin-left: 46px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .published-at {
+    float: right;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  .menu {
+    float: right;
+
+    a > .caret {
+      margin-top: 16px;
+    }
+  }
+}
+
+.sortable-placeholder {
+  height: 2px;
+  background: $orange;
+  margin-top: -2px;
+}
+
+.playable.ui-sortable-helper {
+  background: rgba(255,255,255,0.9);
+  padding: 5px;
+
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+  box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+
+  .menu, .published-at {
+    display: none;
+  }
+}
+
+.is-current {
+  background-color: rgba(234, 99, 55, 0.2);
+}
+
+.playable .title a {
+  font-weight: bold;
+  color: $orange;
+}
+
+.playable.played .title a {
+  font-weight: normal;
+  color: $text;
+}

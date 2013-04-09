@@ -1,0 +1,18 @@
+<div id=header>
+  {{#linkTo index}}
+    <img src="{{unbound Flowfeeds.LOGO}}" id=logo>
+  {{/linkTo}}
+
+  <div class="nav">
+    {{#if Flowfeeds.user}}
+      <span class="welcome">Welcome back {{ Flowfeeds.user.email }}!</span>
+      {{#linkTo about}}About{{/linkTo}}
+      <a href="#" {{ action logout }}>Logout</a>
+    {{else}}
+      {{#linkTo about}}About{{/linkTo}}
+      {{#linkTo register}}Register{{/linkTo}}
+      {{#linkTo login}}Login{{/linkTo}}
+    {{/if}}
+  </div>
+</div>
+

@@ -1,0 +1,192 @@
+@import "colors";
+
+$player-height: 90px;
+$header-height: 60px;
+
+$sidebar-width: 200px;
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+
+  font-family: "Lucida Grande","Open Sans",Tahoma,Verdana,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  color: #555;
+}
+
+a {
+  color: #555;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $orange;
+}
+
+#header {
+  height: $header-height;
+  line-height: $header-height;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+
+  z-index: 999;
+
+  .nav {
+    float: right;
+
+    a {
+      display: inline-block;
+      padding: 0px 10px;
+      margin: 0px 10px;
+    }
+  }
+
+  .welcome {
+    padding: 0px 10px;
+    margin: 0px 10px;
+  }
+}
+
+#logo {
+  height: 40px;
+  padding: 10px;
+}
+
+#sidebar {
+  width: $sidebar-width;
+  position: absolute;
+  top: $header-height;
+  bottom: $player-height;
+  left: 0;
+
+  overflow-y: auto;
+
+  padding-top: 10px;
+
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+#sidebar.is-video-visible {
+  bottom: $player-height + 200px;
+}
+
+#video-player {
+  position: absolute;
+  bottom: $player-height;
+  left: 0px;
+}
+
+#main {
+  background: white;
+  position: absolute;
+  top: $header-height;
+  left: $sidebar-width + 20px;;
+  right: 0px;
+  bottom: $player-height;
+  overflow-y: auto;
+}
+
+#player {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  height: $player-height;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+
+table {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    padding: 10px;
+    border-bottom: 1px #f2f2f2 solid;
+  }
+
+  td.thumb {
+    padding: 0px;
+    text-align: center;
+    img {
+      height: 35px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.padding20px {
+  padding: 20px;
+}
+
+.mailto {
+  color: $orange;
+  text-decoration: underline;
+}
+
+.amp {
+  font-family: Baskerville, Palatino, "Book Antiqua", serif;
+  font-style: italic;
+}
+
+.error {
+  .message {
+    color: $error-color;
+  }
+
+  label {
+    color: $error-color;
+  }
+
+  input[type=text], input[type=password] {
+    border-color: $error-color;
+    background: lighten($error-color, 45%);
+  }
+
+  input:focus {
+    background: white;
+  }
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.flash {
+  color: $error-color;
+  padding: 10px 20px;
+  background: lighten($error-color, 45%);
+  margin-bottom: 20px;
+}
+
+input[type=text], input[type=password] {
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #eee;
+  width: 300px;
+}
+
+label {
+  display: block;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: $orange;
+  outline: 0;
+  outline: thin dotted \9;
+}
+
