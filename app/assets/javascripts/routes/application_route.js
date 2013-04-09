@@ -6,11 +6,11 @@ Flowfeeds.ApplicationRoute = Ember.Route.extend({
     },
 
     previous: function() {
-      this.skipable.send('previous');
+      if(this.skipable) this.skipable.send('previous');
     },
 
     next: function() {
-      this.skipable.send('next');
+      if(this.skipable) this.skipable.send('next');
     },
 
     createPlaylist: function() {
