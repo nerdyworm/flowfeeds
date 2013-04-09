@@ -42,7 +42,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 3b0b573ac3ecbec5b1fa021abbe86b267bbefb8c
+  revision: a74d84bb29a38266ad3de143a4849eed3d3c51fe
   specs:
     actionmailer (4.0.0.beta1)
       actionpack (= 4.0.0.beta1)
@@ -100,7 +100,7 @@ GEM
       activemodel (>= 3.0)
     activerecord-deprecated_finders (0.0.3)
     arel (4.0.0.beta2)
-    atomic (1.0.2)
+    atomic (1.1.6)
     aws-s3 (0.6.3)
       builder
       mime-types
@@ -167,7 +167,7 @@ GEM
       multi_json (~> 1.0)
     handlebars-source (1.0.0.rc.3)
     highline (1.6.15)
-    hike (1.2.1)
+    hike (1.2.2)
     http_parser.rb (0.5.3)
     i18n (0.6.4)
     jquery-rails (2.2.1)
@@ -183,7 +183,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     method_source (0.8.1)
-    mime-types (1.21)
+    mime-types (1.22)
     minitest (4.7.0)
     mono_logger (1.0.0)
     multi_json (1.7.2)
@@ -228,7 +228,7 @@ GEM
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
     slop (3.4.4)
-    sprockets (2.9.0)
+    sprockets (2.9.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
