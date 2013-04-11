@@ -54,6 +54,6 @@ class Admin::VideosController < AdminController
   protected
 
   def video_params
-    params.require(:video).permit(:title, :youtube_id, :artist_name)
+    params.require(:video).permit(:title, :youtube_id, :artist_name, :published)
   end
 end
