@@ -2,7 +2,7 @@ Flowfeeds.Play = Ember.Object.extend();
 Flowfeeds.Play.reopenClass({
   trackPlay: function(playable) {
     Ember.$.ajax({
-      url: "/plays",
+      url: "/plays.json",
       type: "POST",
       data: { play: { playable_id: playable.get("id") } },
       success: function(json) {
