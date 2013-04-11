@@ -18,6 +18,8 @@ module Flowfeeds
     )
 
     config.assets.precompile += %w(
+      vendor.js
+
       admin.js
       admin.css
     )

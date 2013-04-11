@@ -17,6 +17,7 @@
       window.genres = <%= Genre.all.to_json.html_safe %>;
     <% end %>
   <% end %>
+  <%= javascript_include_tag "vendor" %>
   <%= javascript_include_tag "application" %>
 </body>
 </html>

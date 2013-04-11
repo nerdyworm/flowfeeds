@@ -1,0 +1,10 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery.ui.core
+//= require jquery.ui.widget
+//= require jquery.ui.mouse
+//= require jquery.ui.sortable
+//= require soundmanager2
+//= require bootstrap-dropdown
+//= require handlebars
+//= require ember-head
