@@ -1,4 +1,6 @@
 class PlaysController < ApplicationController
+  before_filter :authenticate_user!
+
   def create
     current_user.plays.create(play_params)
 
