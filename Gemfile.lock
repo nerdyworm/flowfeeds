@@ -267,7 +267,6 @@ PLATFORMS
 
 DEPENDENCIES
   aws-s3
-  bcrypt-ruby (~> 3.0.0)
   bootstrap-sass-rails
   capistrano
   carrierwave!

@@ -21,8 +21,6 @@ group :development do
   gem "guard-livereload"
 end
 
-gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
-
 # RSS Parsing
 gem 'feedzirra', github: 'pauldix/feedzirra'
 
