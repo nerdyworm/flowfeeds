@@ -18,7 +18,7 @@ Flowfeeds.RegisterController = Ember.Controller.extend({
       context: this,
       success: function(json) {
         Ember.run(function() {
-          var user = Flowfeeds.User.create(json.user);
+          var user = Flowfeeds.store.load(Flowfeeds.User, json.user);
           Flowfeeds.set('user', user);
         });
 
