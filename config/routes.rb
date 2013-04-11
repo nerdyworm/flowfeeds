@@ -36,11 +36,6 @@ Flowfeeds::Application.routes.draw do
     end
   end
   resources :playlist_items, only: [:destroy]
-  resources :sessions, only: [:create] do
-    collection do
-      delete :destroy
-    end
-  end
 
   resources :tracks, only: [:index, :show] do
     collection do
