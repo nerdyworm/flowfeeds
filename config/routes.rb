@@ -6,15 +6,18 @@ Flowfeeds::Application.routes.draw do
     delete '/sessions' => 'sessions#destroy'
   end
 
-  resources :feeds, only: [:index, :show] do
+  concern :has_many_tracks do
     resources :tracks, only: [:index]
+  end
+
+  resources :feeds, only: [:index, :show], concerns: :has_many_tracks do
     member do
       post "played"
     end
   end
-  resources :genres, only: [:index] do
+
+  resources :genres, only: [:index], concerns: :has_many_tracks do
     resources :feeds,  only: [:index]
-    resources :tracks, only: [:index]
     member do
       post "played"
     end
