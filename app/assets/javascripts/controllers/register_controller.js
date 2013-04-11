@@ -5,7 +5,7 @@ Flowfeeds.RegisterController = Ember.Controller.extend({
 
   submit: function() {
     this.set('errors', null);
-    var promise = Ember.$.ajax({
+    Ember.$.ajax({
       url: "registrations",
       type: "POST",
       data: {
@@ -17,11 +17,12 @@ Flowfeeds.RegisterController = Ember.Controller.extend({
 
       context: this,
       success: function(json) {
-        Ember.run(function() {
+        Ember.run(this, function() {
           var user = Flowfeeds.store.load(Flowfeeds.User, json.user);
-          Flowfeeds.set('user', user);
+          this.send('userDidLogin', user);
         });
 
+        this.reset();
         this.transitionToRoute('welcome');
       },
 
@@ -30,5 +31,10 @@ Flowfeeds.RegisterController = Ember.Controller.extend({
         this.set('errors', json.errors);
       }
     });
+  },
+
+  reset: function() {
+    this.set('email', null);
+    this.set('password', null);
   }
 });
