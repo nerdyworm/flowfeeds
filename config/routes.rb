@@ -12,14 +12,14 @@ Flowfeeds::Application.routes.draw do
 
   resources :feeds, only: [:index, :show], concerns: :has_many_tracks do
     member do
-      post "played"
+      post 'played'
     end
   end
 
   resources :genres, only: [:index], concerns: :has_many_tracks do
     resources :feeds,  only: [:index]
     member do
-      post "played"
+      post 'played'
     end
   end
   resources :listens, only: [:create]
@@ -60,7 +60,7 @@ Flowfeeds::Application.routes.draw do
     resources :tracks
     resources :videos
     authenticate :admin do
-      mount Resque::Server, at: "resque"
+      mount Resque::Server, at: 'resque'
     end
     root to: 'welcome#index'
   end
