@@ -8,6 +8,8 @@ class Feed < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  after_update :change_playable_artists_if_artist_changed
+
   def self.user_unplayed(user)
     select("feeds.*, sum((plays.playable_id is null)::integer) as unplayed").
       joins("JOIN playables on (feeds.id = playables.feed_id and playables.hidden = 'f')").
@@ -70,4 +72,11 @@ class Feed < ActiveRecord::Base
   def artist_name=(name)
     self.artist = Artist.where(name: name).first_or_create
   end
+
+  def change_playable_artists_if_artist_changed
+    if artist_id_changed?
+      self.playables.update_all(artist_id: artist_id)
+    end
+  end
+
 end
