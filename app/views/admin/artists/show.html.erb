@@ -27,6 +27,7 @@
       <tr>
         <td><%= image_tag video.thumb, style: "height: 90px; width: 120px" %></td>
         <td><%= link_to video.title, admin_video_path(video) %></td>
+        <td><%= l(video.published) %></td>
         <td><%= link_to "edit", edit_admin_video_path(video) %></td>
       </tr>
     <% end %>
