@@ -48,16 +48,6 @@ Flowfeeds.TrackController =  Flowfeeds.PlayableController.extend({
     }
   },
 
-  reset: function() {
-    this.setProperties({
-      isPlaying: false,
-      bytesLoaded: 0,
-      bytesTotal: 0,
-      duration: 0,
-      position: 0
-    });
-  },
-
   whileplaying: function() {
     this.setProperties({
       duration: this.sound.durationEstimate,
@@ -82,9 +72,5 @@ Flowfeeds.TrackController =  Flowfeeds.PlayableController.extend({
 
   addToPlaylist: function(playlist) {
     playlist.addItem(this.get('content'));
-  },
-
-  trackPlay: function() {
-    Flowfeeds.Play.trackPlay(this.get('content'));
   }
 });

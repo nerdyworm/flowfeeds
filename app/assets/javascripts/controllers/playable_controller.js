@@ -12,6 +12,20 @@ Flowfeeds.PlayableController = Ember.ObjectController.extend({
 
   addToPlaylist: function(playlist) {
     playlist.addItem(this.get('content'));
+  },
+
+  reset: function() {
+    this.setProperties({
+      isPlaying: false,
+      bytesLoaded: 0,
+      bytesTotal: 0,
+      duration: 0,
+      position: 0
+    });
+  },
+
+  trackPlay: function() {
+    Flowfeeds.Play.trackPlay(this.get('content'));
   }
 });
 

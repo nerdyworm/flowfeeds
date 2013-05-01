@@ -6,7 +6,7 @@ Flowfeeds.VideoController = Flowfeeds.PlayableController.extend({
   setup: function(video) {
     this.set('content', video);
     this.video = new YT.Player('video-player', this.createVideoOptions());
-    this.trackWatch();
+    this.trackPlay();
   },
 
   createVideoOptions: function() {
@@ -79,19 +79,5 @@ Flowfeeds.VideoController = Flowfeeds.PlayableController.extend({
 
   jump: function(float) {
     this.video.seekTo(float * this.video.getDuration());
-  },
-
-  reset: function() {
-    this.setProperties({
-      isPlaying: false,
-      bytesLoaded: 0,
-      bytesTotal: 0,
-      duration: 0,
-      position: 0
-    });
-  },
-
-  trackWatch: function() {
-    Flowfeeds.Play.trackPlay(this.get('content'));
   }
 });
