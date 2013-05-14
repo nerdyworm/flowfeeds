@@ -4,13 +4,11 @@ gem 'rails', github: 'rails/rails'
 
 gem 'pg'
 
-group :assets do
-  gem 'sass-rails', '~> 4.0.0.beta1'
-  gem 'coffee-rails', '~> 4.0.0.beta1'
+gem 'sass-rails',   '~> 4.0.0.rc1'
+gem 'coffee-rails', '~> 4.0.0'
 
-  gem 'uglifier', '>= 1.0.3'
-  gem 'bootstrap-sass-rails'
-end
+gem 'uglifier', '>= 1.0.3'
+gem 'bootstrap-sass-rails'
 
 gem 'jquery-rails'
 
@@ -30,7 +28,7 @@ gem 'carrierwave', github: 'jnicklas/carrierwave'
 gem "rmagick", "2.12.0"
 
 # User Authentication
-gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
+gem 'devise', github: 'plataformatec/devise'
 
 # Queues
 gem "resque", github: 'resque/resque', branch: '1-x-stable'
