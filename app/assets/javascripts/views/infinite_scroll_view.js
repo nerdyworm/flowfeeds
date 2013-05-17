@@ -4,13 +4,13 @@ Flowfeeds.InfiniteScrollView = Ember.View.extend({
 
   didInsertElement: function() {
     var view = this;
-    $('#main').bind('scroll', function(){
+    $('#main').on('scroll', function(){
       view.onScroll();
     });
   },
 
   willDestroyElement: function() {
-    $('#main').unbind('scroll');
+    $('#main').off('scroll');
   },
 
   onScroll: function() {
