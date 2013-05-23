@@ -2,7 +2,7 @@ class RegistrationsController < ApplicationController
   respond_to :json
 
   def create
-    user = User.new(registraion_params)
+    user = User.new(registration_params)
 
     if user.save
       sign_in user
@@ -14,7 +14,7 @@ class RegistrationsController < ApplicationController
 
   private
 
-  def registraion_params
+  def registration_params
     params.require(:registration).permit(:email, :password)
   end
 end
