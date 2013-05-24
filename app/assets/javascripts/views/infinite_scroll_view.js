@@ -24,6 +24,6 @@ Flowfeeds.InfiniteScrollView = Ember.View.extend({
         height = this.$().height(),
         containerHeight = $("#main").height();
 
-    return Math.abs(top - containerHeight) === height;
+    return Math.abs(top - containerHeight) >= height - 200;
   }
 });
