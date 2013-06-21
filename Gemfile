@@ -13,6 +13,7 @@ gem 'bootstrap-sass-rails'
 gem 'jquery-rails'
 
 gem 'ember-rails', github: 'emberjs/ember-rails'
+gem 'handlebars-source', '1.0.0.rc4'
 
 group :development do
   gem 'rb-fsevent', '~> 0.9'

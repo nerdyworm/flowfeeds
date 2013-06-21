@@ -1,5 +1,6 @@
 Flowfeeds.GenreRoute = Ember.Route.extend({
   setupController: function(controller, model) {
+    controller.set('model', model);
     model.lazyLoadTracks();
   },
 
