@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.0.3'
 gem 'bootstrap-sass-rails'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'ember-rails', github: 'emberjs/ember-rails'
 gem 'handlebars-source', '1.0.0.rc4'
