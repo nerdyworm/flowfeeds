@@ -35,6 +35,8 @@ Flowfeeds.VideoController = Flowfeeds.PlayableController.extend({
     var controller = this,
         video = this.video;
 
+    if(this.updateLoop) this.stopUpdateLoop();
+
     this.updateLoop = setInterval(function() {
       if(video && video.getCurrentTime) {
         controller.set('position', video.getCurrentTime() * 1000);
@@ -44,6 +46,7 @@ Flowfeeds.VideoController = Flowfeeds.PlayableController.extend({
 
   stopUpdateLoop: function() {
     clearInterval(this.updateLoop);
+    this.updateLoop = null;
   },
 
   onStateChange: function(state) {
